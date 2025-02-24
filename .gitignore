@@ -1,0 +1,32 @@
+# Composer
+/vendor/
+
+# PHPUnit
+/phpunit-result.xml
+/phpunit-watcher.cache
+
+# Папки и файлы, генерируемые IDE
+/.idea/
+/.vscode/
+/*.iml
+
+# Лог-файлы
+*.log
+
+# Кэш Composer
+/composer.lock
+/composer.json.*
+/.cache/
+
+# Директории с данными, не относящимися к репозиторию
+/storage/
+/uploads/
+
+# Прочее
+*.swp
+.DS_Store
+Thumbs.db
+
+/tests/test.sqlite
+phpunit.xml
+.phpunit.result.cache

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php">
+    <php>
+        <env name="DB_CONNECTION" value="<type of connection>"/>
+        <env name="DB_DATABASE" value="<path to sqlite file>"/>
+        <env name="DB_USER" value="<username>"/>
+        <env name="DB_PASS" value="<password>"/>
+        <env name="DB_DSN" value="<dsn>"/>
+    </php>
+    <testsuites>
+        <testsuite name="DatabaseStorage Tests">
+            <directory><directory to tests></directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
