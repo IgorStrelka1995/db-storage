@@ -6,12 +6,11 @@ namespace Istrelka\Storage\Tests;
 
 use Istrelka\Storage\Exception\ParameterException;
 use Istrelka\Storage\Exception\QueryException;
-use Istrelka\Storage\Storage;
 use Istrelka\Storage\StorageContext;
 use Istrelka\Storage\Strategy\MySQLStorage;
 use PHPUnit\Framework\TestCase;
 
-class StorageTest extends TestCase
+class MySqlStorageTest extends TestCase
 {
     const TEST_TABLE_NAME = 'test_table';
 
