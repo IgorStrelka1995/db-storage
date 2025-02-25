@@ -5,14 +5,18 @@ declare(strict_types=1);
 namespace Istrelka\Storage\Tests;
 
 use Istrelka\Storage\Storage;
+use Istrelka\Storage\StorageContext;
+use Istrelka\Storage\Strategy\MySQLStorage;
 
 trait RefreshDatabase
 {
     public function setUp(): void
     {
-        $storage = new Storage();
+        $mysqlStorage = new MySQLStorage();
 
-        $connection = $storage->connect()->getConnection();
+        $storage = new StorageContext($mysqlStorage);
+
+        $connection = $storage->getStorage()->connect()->getConnection();
 
         $tableName = StorageTest::TEST_TABLE_NAME;
 
@@ -28,9 +32,11 @@ trait RefreshDatabase
 
     public function tearDown(): void
     {
-        $storage = new Storage();
+        $mysqlStorage = new MySQLStorage();
 
-        $connection = $storage->connect()->getConnection();
+        $storage = new StorageContext($mysqlStorage);
+
+        $connection = $storage->getStorage()->connect()->getConnection();
 
         $tableName = StorageTest::TEST_TABLE_NAME;
 

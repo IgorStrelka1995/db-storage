@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Istrelka\Storage;
+namespace Istrelka\Storage\Strategy;
 
 use Istrelka\Storage\Exception\ParameterException;
 use Istrelka\Storage\Exception\QueryException;
 use Istrelka\Storage\Exception\ConnectionException;
+use Istrelka\Storage\Contract\StorageInterface;
 
-class Storage
+class MySQLStorage implements StorageInterface
 {
     /**
      * @var \PDO|null
@@ -19,7 +20,7 @@ class Storage
      * @return $this
      * @throws ConnectionException
      */
-    public function connect(): Storage
+    public function connect(): StorageInterface
     {
         $username = getenv('DB_USER');
         $password = getenv('DB_PASS');
